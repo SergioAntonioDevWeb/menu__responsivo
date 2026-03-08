@@ -40,9 +40,23 @@ body {
     --transform: rotate(-90deg);
 }
 
+.menu__item--active {
+    --transform: rotate(0);
+    --background: #5e7094;
+}
+
 .menu__item:hover {
     --clip: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     --transform: rotate(0deg);
+}
+
+.menu__item--show {
+    background-color: var(--background);
+}
+
+.menu__links--show {
+    transform: unset;
+    width: 100%;
 }
 
 .menu__link {
@@ -121,6 +135,12 @@ body {
         overflow-y: auto;
         display: grid;
         grid-auto-rows: max-content;
+        transform: translateX(100%);
+    }
+
+    .menu__links--show {
+        transform: unset;
+        width: 100%;
     }
 
     .menu__link {
